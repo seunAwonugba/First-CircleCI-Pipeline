@@ -53,10 +53,10 @@ jobs:
 workflows:
     say-hello-workflow:
         jobs:
-            - save_hello_world_outputs
+            - save_hello_world_output
             - print_output_file:
                   requires:
-                      - save_hello_world_outputs
+                      - save_hello_world_output
 # version: 2
 # jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 #   one: # This is our first job.
