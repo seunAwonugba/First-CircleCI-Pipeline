@@ -6,15 +6,16 @@ jobs:
         steps:
             - run: echo "practice saving data in jobs" > ~/output.txt
             - persist_to_workspace:
-              root: ~/
-              paths:
-                  - output.txt
+                  root: ~/
+                  paths:
+                      - output.txt
+
     print_output_file:
         docker:
             - image: circleci/node:13.8.0
         steps:
             - attach_workspace:
-              at: ~/
+                  at: ~/
             - run: cat ~/output.txt
 workflows:
     persist_data_workflow:
